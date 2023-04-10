@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
+    "start": "nodemon app.js",
+    "lint": "eslint",
     "migrations:generate": "sequelize-cli migration:generate --name",
     "migratsions:run": "sequelize-cli db:migrate",
     "migrations:revert": "sequelize-cli db:migrate:undo"
