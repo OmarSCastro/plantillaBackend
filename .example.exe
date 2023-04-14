@@ -1,0 +1,47 @@
+    ruta tiene la siguiente fk
+
+
+    id_modulo: {
+        allowNull: false,
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'modulo',
+            key: 'id_modulo'
+        },
+        onUpdate: 'CASCADE', // Esto ocurre al actualizar, un efecto en cascada y tambien se actualiza
+        onDelete: 'SET NULL' // Esto ocurre al borrar, se establece a null
+    },
+
+
+
+    ruta tiene las siguientes asociaciones
+
+    this.belongsTo(models.modulo, {
+            // as:'moduloRuta',
+            foreignKey: 'id_modulo'
+        });
+
+        this.hasOne(models.servicio, {
+            // as:'moduloRuta',
+            foreignKey: 'id_ruta'
+        });
+
+
+    modulo tiene la siguiente asociación hacia ruta
+    this.hasMany(models.ruta, {
+            as: 'moduloRutas',
+            foreignKey: 'id_modulo'
+        });
+
+
+    ruta tiene las siguientes asociaciones
+
+    this.belongsTo(models.modulo, {
+            // as:'moduloRuta',
+            foreignKey: 'id_modulo'
+        });
+
+        this.hasOne(models.servicio, {
+            // as:'moduloRuta',
+            foreignKey: 'id_ruta'
+        });
